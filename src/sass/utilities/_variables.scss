@@ -1,0 +1,16 @@
+// import the theme color partial;
+@import 'theme-colors';
+
+// create basic colors from theme-colors
+$color-primary      : $medium-blue;
+$color-secondary    : $fountain-blue;
+$color-complementary: $pastel-green;
+
+// color adjust variables (for use in color functions)
+// wrap in a map to help keep naming confusion down later
+$color-adjustment-values: (
+  light  : 38%,
+  dark   : 24%
+);
+
+$light : 38%;

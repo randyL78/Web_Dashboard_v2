@@ -1,0 +1,8 @@
+// change color values
+@function color-adjuster($base-color, $adjust-value) {
+  $color-palette : (
+    light : lighten($base-color, map-get($color-adjustment-values, 'light'))
+  );
+
+  @return map-get($color-palette, $adjust-value );
+}

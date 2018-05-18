@@ -1,5 +1,23 @@
+* {
+  box-sizing: border-box; }
+
 body {
   margin: 0;
-  padding: 0;
-  font-family: sans-serif;
-}
+  padding: 0; }
+
+.headline--lt {
+  color: white;
+  margin: 0; }
+.headline--skinny {
+  font-weight: 200; }
+
+.header {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #7D7EE3;
+  padding: 1.5em; }
+  .header__headline {
+    flex-basis: 100%;
+    text-align: center; }
+
+/*# sourceMappingURL=index.css.map */

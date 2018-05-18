@@ -1,0 +1,9 @@
+.headline {
+  &--lt {
+    color: color-adjuster($color-primary, light);
+    margin: 0;
+  }
+  &--skinny {
+    font-weight: 200;
+  }
+}

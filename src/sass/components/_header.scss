@@ -1,0 +1,12 @@
+.header {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: $color-primary;
+    padding: 1.5em;
+    &__headline {
+      flex-basis: 100%;
+      text-align: center;
+    }
+  }
+
+
