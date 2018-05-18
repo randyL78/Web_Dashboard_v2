@@ -30,4 +30,10 @@ body {
     flex-basis: 100%;
     text-align: center; }
 
+.icon {
+  height: 2em;
+  width: 2em; }
+  .icon__path {
+    fill: #e2e2f9; }
+
 /*# sourceMappingURL=index.css.map */
