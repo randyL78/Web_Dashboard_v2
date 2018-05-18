@@ -1,3 +1,13 @@
+/* Media query selector 
+ * @param $break-size size of media query breakpoint, defaults to medium
+ */
+/* change color brightness
+ * @param $base-color the color to be adjusted
+ * @param $adjust-value the amount of lightening or darkening to perform, defaults to base
+ */
+/* Gets the valid keys from a map 
+ * used for error messages to display valid options
+ */
 * {
   box-sizing: border-box; }
 
@@ -6,7 +16,7 @@ body {
   padding: 0; }
 
 .headline--lt {
-  color: white;
+  color: #e2e2f9;
   margin: 0; }
 .headline--skinny {
   font-weight: 200; }

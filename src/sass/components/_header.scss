@@ -6,6 +6,9 @@
     &__headline {
       flex-basis: 100%;
       text-align: center;
+      @include mq(small) {
+
+      }
     }
   }
 

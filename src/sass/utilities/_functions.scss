@@ -1,8 +1,34 @@
-// change color values
-@function color-adjuster($base-color, $adjust-value) {
+/* change color brightness
+ * @param $base-color the color to be adjusted
+ * @param $adjust-value the amount of lightening or darkening to perform, defaults to base
+ */
+@function color-adjuster($base-color, $adjust-value : base) {
+  // map of different colors based on base color
   $color-palette : (
-    light : lighten($base-color, map-get($color-adjustment-values, 'light'))
+    x-light : lighten($base-color, map-get($color-adjustment-values, 'x-light')),
+    light   : lighten($base-color, map-get($color-adjustment-values, 'light')),
+    base    : $base-color,
+    dark    : darken($base-color, map-get($color-adjustment-values, 'dark')),
+    x-dark  : darken($base-color, map-get($color-adjustment-values, 'x-dark'))
   );
 
+  // if color palette map does not contain passed value, throw an error
+  @if type-of(map-get($color-palette, $adjust-value )) == 'null' {
+    $message : "`#{$adjust-value}` is not a valid selection for color-adjuster, please enter: ";
+    // add each valid key to message so user knows what values are valid
+    $message : $message + get-valid-keys($color-palette);
+    @error $message;
+  }
   @return map-get($color-palette, $adjust-value );
+}
+
+/* Gets the valid keys from a map 
+ * used for error messages to display valid options
+ */
+@function get-valid-keys($map-name) {
+  $message : "";
+   @each $key in $map-name {
+     $message : $message + " " + $key;
+   }
+  @return $message;
 }

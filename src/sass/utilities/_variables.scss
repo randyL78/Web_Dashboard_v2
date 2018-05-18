@@ -7,10 +7,19 @@ $color-secondary    : $fountain-blue;
 $color-complementary: $pastel-green;
 
 // color adjust variables (for use in color functions)
-// wrap in a map to help keep naming confusion down later
+// wrap in a map to help keep naming confusion down later as styles expand
 $color-adjustment-values: (
-  light  : 38%,
-  dark   : 24%
+  x-light: 24%,
+  light  : 12%,
+  dark   : 8%,
+  x-dark : 16%
 );
 
-$light : 38%;
+// Media query breakpoints
+// wrap in a map to help keep naming confusion down later as styles expand
+$media-breakpoints : (
+  small   : 480px,
+  medium  : 768px,
+  large   : 1024px,
+  x-large : 1400px
+);
