@@ -19,17 +19,17 @@
       border: 3px solid color-adjuster($color-primary, dark);
       &:hover {
         & .icon__path {
-          fill: color-adjuster($color-secondary, light);
+          fill: color-adjuster($color-complementary, light);
         }        
       }
       &.active {
-        border-bottom: 3px solid color-adjuster($color-secondary, light);
+        border-bottom: 3px solid color-adjuster($color-complementary, light);
         @include mq {
           border-bottom: 3px solid color-adjuster($color-primary, dark);
-          border-left: 3px solid color-adjuster($color-secondary, light);
+          border-left: 3px solid color-adjuster($color-complementary, light);
         }
         & .icon__path {
-          fill: color-adjuster($color-secondary, light);
+          fill: color-adjuster($color-complementary, light);
         }
       }
       & .icon {

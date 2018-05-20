@@ -25,7 +25,8 @@
 @import url("https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900");
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:300,700");
 [class^=headline] {
-  font-family: "Open Sans", sans-serif; }
+  font-family: "Open Sans", sans-serif;
+  margin: 0; }
 
 * {
   box-sizing: border-box; }
@@ -39,8 +40,9 @@ sup {
   font-size: .5em; }
 
 .headline--lt {
-  color: #e6e3f9;
-  margin: 0; }
+  color: #e6e3f9; }
+.headline--med {
+  color: #3f29bd; }
 .headline--skinny {
   font-weight: 300; }
 
@@ -131,15 +133,15 @@ sup {
 .nav__link--icon {
   border: 3px solid #614cd8; }
   .nav__link--icon:hover .icon__path {
-    fill: #80cad7; }
+    fill: #92e3b0; }
   .nav__link--icon.active {
-    border-bottom: 3px solid #80cad7; }
+    border-bottom: 3px solid #92e3b0; }
     @media (min-width: 768px) {
       .nav__link--icon.active {
         border-bottom: 3px solid #614cd8;
-        border-left: 3px solid #80cad7; } }
+        border-left: 3px solid #92e3b0; } }
     .nav__link--icon.active .icon__path {
-      fill: #80cad7; }
+      fill: #92e3b0; }
   .nav__link--icon .icon {
     width: 3em;
     padding: .5em; }
@@ -152,15 +154,53 @@ sup {
       padding-left: 4em;
       flex-flow: row wrap; } }
 
+#search-site {
+  min-width: 250px;
+  height: 2.5em;
+  padding-left: 0.5em;
+  outline: none;
+  border-radius: 4px; }
+
+.search--wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-basis: 100%;
+  padding: 0.5em; }
+  @media (min-width: 768px) {
+    .search--wrapper {
+      border: none;
+      box-shadow: -3px -3px 4px 0 #614cd8 inset, 2px 2px 4px 0 #1e1359 inset;
+      border-radius: 2px; } }
+
+.search-tab--wrapper {
+  display: flex;
+  flex-basis: 100%; }
+  @media (min-width: 768px) {
+    .search-tab--wrapper {
+      padding-left: 4em; } }
+
+.tab {
+  background-color: #e6e3f9;
+  padding: .5em 1em;
+  min-width: 150px;
+  text-align: center;
+  text-transform: capitalize; }
+  @media (min-width: 768px) {
+    .tab {
+      border: none;
+      box-shadow: -3px -3px 4px 0 #8d7ee3 inset, 2px 2px 4px 0 white inset;
+      border-radius: 2px; } }
+
 .card {
   min-height: 4em;
   background-color: #e6e3f9;
-  border: 1px inset white; }
+  border: 2px inset white; }
   @media (min-width: 768px) {
     .card {
       border: none;
-      box-shadow: -1px -1px 2px 0 white inset, 0px 0px 2px 0 #8d7ee3 inset;
-      border-radius: 0px; } }
+      box-shadow: -2px -2px 3px 0 white inset, 1px 1px 3px 0 #8d7ee3 inset;
+      border-radius: 1px; } }
   .card--half {
     flex-basis: 50%; }
   .card--full {

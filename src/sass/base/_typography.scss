@@ -12,7 +12,10 @@
 .headline {
   &--lt {
     color: color-adjuster($color-primary, x-light);
-    margin: 0;
+    
+  }
+  @include m(med) {
+    color: color-adjuster($color-primary, x-dark);
   }
   &--skinny {
     font-weight: 300;
