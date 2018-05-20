@@ -16,8 +16,7 @@
 }
 
 .search-tab--wrapper {
-  display: flex;
-  flex-basis: 100%;
+  @extend .flex-wrapper ;
   @include mq {
     padding-left: 4em;
   }

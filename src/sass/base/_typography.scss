@@ -10,14 +10,14 @@
 
 
 .headline {
-  &--lt {
-    color: color-adjuster($color-primary, x-light);
+  @include m(lt) {
+    color: color-adjuster($color-primary, xx-light);
     
   }
   @include m(med) {
     color: color-adjuster($color-primary, x-dark);
   }
-  &--skinny {
+  @include m(skinny) {
     font-weight: 300;
   }
 }
@@ -33,4 +33,8 @@
     width: 0;
     height: 0;
   }
+}
+
+a {
+  text-decoration: none;
 }

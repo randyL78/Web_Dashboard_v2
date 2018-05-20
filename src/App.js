@@ -18,7 +18,7 @@ class App extends Component {
           <Route exact path="/" render={ () => <Redirect to = "/dashboard" /> } />
           <Route path="/:tab" render = { props => <SearchTab tab={props.match.params.tab}/> } />
           <Switch>
-            <Route exact path="/dashboard" render={ () => <Dashboard tab="Dashboard" /> } />
+            <Route path="/dashboard" render={ () => <Dashboard tab="Dashboard" /> } />
          </Switch>
         </div>
       </BrowserRouter>

@@ -12,3 +12,9 @@ sup {
   font-size: .5em;
 }
 
+.flex-wrapper {
+  display: flex;
+  flex-basis: 100%;
+  justify-content: space-between;
+  align-items: center;
+}

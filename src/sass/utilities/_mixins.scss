@@ -96,3 +96,10 @@
     @content;
   }
 }
+
+/* inbetween two siblings of same type */
+@mixin doubly() {
+  & + & {
+    @content;
+  }
+}

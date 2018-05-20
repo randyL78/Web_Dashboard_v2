@@ -8,7 +8,7 @@ class SearchTab extends React.Component {
       <div className="search-tab--wrapper" > 
         <h3 className="headline--med tab" >{tab}</h3>
         <div className="search--wrapper" >
-          <input type="text" placeholder="Search..." name="search-site" id="search-site" />
+          <input type="search" placeholder="Search..." name="search-site" id="search-site" />
         </div>
       </div>
     );

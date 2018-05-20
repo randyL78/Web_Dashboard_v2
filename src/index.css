@@ -15,6 +15,7 @@
 /* BEM naming convention mixins */
 /* element level */
 /* modifier level */
+/* inbetween two siblings of same type */
 /* change color brightness
  * @param $base-color the color to be adjusted
  * @param $adjust-value the amount of lightening or darkening to perform, defaults to base
@@ -24,7 +25,7 @@
  */
 @import url("https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900");
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:300,700");
-[class^=headline] {
+[class^=headline], .nav__link--pill-bar {
   font-family: "Open Sans", sans-serif;
   margin: 0; }
 
@@ -34,15 +35,21 @@
 body {
   margin: 0;
   padding: 0;
-  background-color: #2e1e8b; }
+  background-color: #343670; }
 
 sup {
   font-size: .5em; }
 
+.flex-wrapper, .search-tab--wrapper {
+  display: flex;
+  flex-basis: 100%;
+  justify-content: space-between;
+  align-items: center; }
+
 .headline--lt {
-  color: #e6e3f9; }
+  color: white; }
 .headline--med {
-  color: #3f29bd; }
+  color: #474a9a; }
 .headline--skinny {
   font-weight: 300; }
 
@@ -52,19 +59,22 @@ sup {
   width: 0;
   height: 0; }
 
+a {
+  text-decoration: none; }
+
 .header {
   display: flex;
   flex-flow: column;
   flex-wrap: wrap;
-  background-color: #8D7EE3;
+  background-color: #9092cc;
   padding: .2em 1em;
   align-items: center;
   justify-content: space-between;
-  border: 4px outset #b9b0ee; }
+  border: 4px outset #babbdf; }
   @media (min-width: 768px) {
     .header {
       border: none;
-      box-shadow: -4px -4px 5px 0 #3f29bd inset, 3px 3px 5px 0 #b9b0ee inset;
+      box-shadow: -4px -4px 5px 0 #474a9a inset, 3px 3px 5px 0 #babbdf inset;
       border-radius: 3px; } }
   @media (min-width: 480px) {
     .header {
@@ -102,7 +112,7 @@ sup {
     border-radius: 50%;
     background-color: #66eeaa;
     transform: translateY(-25px) translateX(-5px);
-    border: 1px solid #614cd8; }
+    border: 1px solid #6669b9; }
     @media (min-width: 768px) {
       .svg-wrapper--success::after {
         box-shadow: -1px -1px 3px 0 #108d4e inset, 2px 2px 3px 0 #d4fae7 inset, 0 0 4px 1px #9df4c9; } }
@@ -110,17 +120,17 @@ sup {
 .user-profile {
   display: flex;
   align-items: center;
-  border-left: 2px solid #614cd8; }
+  border-left: 2px solid #6669b9; }
 
 .nav--main {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #614cd8; }
+  background-color: #6669b9; }
   @media (min-width: 768px) {
     .nav--main {
       border: none;
-      box-shadow: -4px -4px 5px 0 #2e1e8b inset, 3px 3px 5px 0 #8d7ee3 inset;
+      box-shadow: -4px -4px 5px 0 #343670 inset, 3px 3px 5px 0 #9092cc inset;
       border-radius: 3px; } }
   @media (min-width: 768px) {
     .nav--main {
@@ -130,21 +140,50 @@ sup {
       position: fixed;
       padding-top: 1em;
       justify-content: flex-start; } }
+.nav--graph {
+  padding-right: 0.5em;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center; }
 .nav__link--icon {
-  border: 3px solid #614cd8; }
+  border: 3px solid #6669b9; }
   .nav__link--icon:hover .icon__path {
     fill: #92e3b0; }
   .nav__link--icon.active {
     border-bottom: 3px solid #92e3b0; }
     @media (min-width: 768px) {
       .nav__link--icon.active {
-        border-bottom: 3px solid #614cd8;
+        border-bottom: 3px solid #6669b9;
         border-left: 3px solid #92e3b0; } }
     .nav__link--icon.active .icon__path {
       fill: #92e3b0; }
   .nav__link--icon .icon {
     width: 3em;
     padding: .5em; }
+.nav__link--pill-bar {
+  font-weight: 700;
+  background-color: #6669b9;
+  color: white;
+  padding: 0.5em;
+  min-width: 75px;
+  text-align: center;
+  border: 1px outset #babbdf; }
+  @media (min-width: 768px) {
+    .nav__link--pill-bar {
+      border: none;
+      box-shadow: -1px -1px 2px 0 #474a9a inset, 0px 0px 2px 0 #babbdf inset;
+      border-radius: 0px; } }
+  .nav__link--pill-bar:first-of-type {
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px; }
+  .nav__link--pill-bar:last-of-type {
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px; }
+  .nav__link--pill-bar.active {
+    background-color: #33c869; }
+    @media (min-width: 768px) {
+      .nav__link--pill-bar.active {
+        box-shadow: 0 0 10px 1px #61d78c, 0 0 15px 1px #e3f8eb inset; } }
 
 .dashboard {
   display: flex;
@@ -153,6 +192,9 @@ sup {
     .dashboard {
       padding-left: 4em;
       flex-flow: row wrap; } }
+
+.title {
+  padding: 0.2em 0.5em; }
 
 #search-site {
   min-width: 250px;
@@ -170,18 +212,15 @@ sup {
   @media (min-width: 768px) {
     .search--wrapper {
       border: none;
-      box-shadow: -3px -3px 4px 0 #614cd8 inset, 2px 2px 4px 0 #1e1359 inset;
+      box-shadow: -3px -3px 4px 0 #6669b9 inset, 2px 2px 4px 0 #202247 inset;
       border-radius: 2px; } }
 
-.search-tab--wrapper {
-  display: flex;
-  flex-basis: 100%; }
-  @media (min-width: 768px) {
-    .search-tab--wrapper {
-      padding-left: 4em; } }
+@media (min-width: 768px) {
+  .search-tab--wrapper {
+    padding-left: 4em; } }
 
 .tab {
-  background-color: #e6e3f9;
+  background-color: #e4e4f2;
   padding: .5em 1em;
   min-width: 150px;
   text-align: center;
@@ -189,31 +228,34 @@ sup {
   @media (min-width: 768px) {
     .tab {
       border: none;
-      box-shadow: -3px -3px 4px 0 #8d7ee3 inset, 2px 2px 4px 0 white inset;
+      box-shadow: -3px -3px 4px 0 #9092cc inset, 2px 2px 4px 0 white inset;
       border-radius: 2px; } }
 
 .card {
   min-height: 4em;
-  background-color: #e6e3f9;
+  background-color: #e4e4f2;
   border: 2px inset white; }
   @media (min-width: 768px) {
     .card {
       border: none;
-      box-shadow: -2px -2px 3px 0 white inset, 1px 1px 3px 0 #8d7ee3 inset;
+      box-shadow: -2px -2px 3px 0 white inset, 1px 1px 3px 0 #9092cc inset;
       border-radius: 1px; } }
   .card--half {
     flex-basis: 50%; }
   .card--full {
     flex-basis: 100%; }
 
+[class^=card] {
+  padding: 0.5em; }
+
 .icon__path {
-  fill: #e6e3f9; }
+  fill: #e4e4f2; }
 
 .img--avatar {
   border-radius: 50%;
   height: 2.5em;
   margin-left: 1em;
   margin-right: 1em;
-  box-shadow: 0 0 1px 1px #e6e3f9; }
+  box-shadow: 0 0 1px 1px #e4e4f2; }
 
 /*# sourceMappingURL=index.css.map */
