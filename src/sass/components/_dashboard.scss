@@ -1,0 +1,8 @@
+.dashboard {
+  display: flex;
+  flex-direction: column;
+  @include mq {
+    padding-left: 4em;
+    flex-flow: row wrap;
+  }
+}

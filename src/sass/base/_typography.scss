@@ -1,9 +1,33 @@
+// import fonts if defined
+@if variable-exists(font-url--primary) {
+  @import url($font-url--primary);
+}
+
+@if variable-exists(font-url--headline) {
+  @import url($font-url--headline);
+}
+
+
+
 .headline {
   &--lt {
     color: color-adjuster($color-primary, x-light);
     margin: 0;
   }
   &--skinny {
-    font-weight: 200;
+    font-weight: 300;
+  }
+}
+
+[class^= headline] {
+  @extend %headline;
+}
+
+.text {
+  @include m(hidden) {
+    display: block;
+    overflow: hidden;
+    width: 0;
+    height: 0;
   }
 }

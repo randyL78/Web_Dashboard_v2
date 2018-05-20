@@ -5,11 +5,13 @@
 @function color-adjuster($base-color, $adjust-value : base) {
   // map of different colors based on base color
   $color-palette : (
+    xx-light: lighten($base-color, map-get($color-adjustment-values, 'xx-light')),
     x-light : lighten($base-color, map-get($color-adjustment-values, 'x-light')),
     light   : lighten($base-color, map-get($color-adjustment-values, 'light')),
     base    : $base-color,
     dark    : darken($base-color, map-get($color-adjustment-values, 'dark')),
-    x-dark  : darken($base-color, map-get($color-adjustment-values, 'x-dark'))
+    x-dark  : darken($base-color, map-get($color-adjustment-values, 'x-dark')),
+    xx-dark : darken($base-color, map-get($color-adjustment-values, 'xx-dark'))
   );
 
   // if color palette map does not contain passed value, throw an error

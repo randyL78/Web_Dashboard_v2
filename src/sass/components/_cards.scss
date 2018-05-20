@@ -1,0 +1,12 @@
+.card {
+  min-height: 4em;
+  background-color: color-adjuster($color-primary, x-light);
+  @include insetter(color-adjuster($color-primary, x-light), 1 );
+
+  @include m(half) {
+    flex-basis: 50%;
+  }
+  @include m(full) {
+    flex-basis: 100%;
+  }
+}

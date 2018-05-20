@@ -1,15 +1,68 @@
 .header {
     display: flex;
+    flex-flow: column;
     flex-wrap: wrap;
     background-color: $color-primary;
-    padding: 1.5em;
+    padding: .2em 1em;
+    align-items: center;
+    justify-content: space-between;
+    @include outsetter;
+    @include mq(small) {
+      flex-flow: row wrap;
+    }
+    @include mq {
+      padding: 0.45em 1.15em;
+    }
     &__headline {
       flex-basis: 100%;
       text-align: center;
       @include mq(small) {
-        
+        flex-basis: initial;
+        text-align: left;
+      }
+    }
+    &__information {
+      display: flex;
+      justify-content: space-between;
+      flex-basis: 100%;
+      @include mq(small) {
+        align-content: flex-end;
+        flex-basis: initial;
       }
     }
   }
 
+.icon--header {
+  height: 2em;
+}
 
+
+.svg-wrapper {
+  &--success {
+    align-self: center;
+    padding-top: .2em;
+    &::after {
+      content: "";
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: $color-success;
+      transform: translateY(-25px) translateX(-5px);
+      border: 1px solid color-adjuster($color-primary, dark);
+     
+      @include mq {
+        box-shadow: 
+          -1px -1px 3px 0 color-adjuster($color-success, xx-dark) inset, 
+          2px 2px 3px 0 color-adjuster($color-success, x-light) inset,
+          0 0 4px 1px color-adjuster($color-success, light);
+      }
+    }
+  }
+}
+
+.user-profile {
+  display: flex;
+  align-items: center;
+  border-left: 2px solid color-adjuster($color-primary, dark);
+}

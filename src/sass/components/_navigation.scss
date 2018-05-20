@@ -1,0 +1,42 @@
+.nav {
+  @include m(main) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: color-adjuster($color-primary, dark);
+    @include outsetter(color-adjuster($color-primary, dark), 4, false);
+    @include mq() {
+      height: 100vh;
+      width: 4em;
+      flex-direction: column;
+      position: fixed;
+      padding-top: 1em;
+      justify-content: flex-start;
+    }
+  }
+  @include e(link) {
+    @include m(icon) {
+      border: 3px solid color-adjuster($color-primary, dark);
+      &:hover {
+        & .icon__path {
+          fill: color-adjuster($color-secondary, light);
+        }        
+      }
+      &.active {
+        border-bottom: 3px solid color-adjuster($color-secondary, light);
+        @include mq {
+          border-bottom: 3px solid color-adjuster($color-primary, dark);
+          border-left: 3px solid color-adjuster($color-secondary, light);
+        }
+        & .icon__path {
+          fill: color-adjuster($color-secondary, light);
+        }
+      }
+      & .icon {
+        width: 3em;
+        padding: .5em;
+      }
+
+    }
+  }
+}

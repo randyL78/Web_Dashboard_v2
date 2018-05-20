@@ -26,3 +26,73 @@
    @content;
  }
 }
+
+/* 
+ * theme related styling mixins 
+ */
+
+/* Creates an outset border on smaller screen and a similar box shadow on larger screens for a raised panel look
+ * @param $color the base color to adjust the effects to, defaults to $primary-color
+ * @param $stroke-width width of effect in pixels
+ */
+@mixin outsetter($color: $color-primary, $stroke-width: 4, $has-mobile-effects: true, $inverted: false) {
+  $unit : px;
+  @if unitless($stroke-width) == false {
+    @if unit($stroke-width) == 'px' {
+      $stroke-width : $stroke-width / 1px;
+    } @else {
+      @error $stroke-width + ' not a valid number, $stroke-width must be a unitless number or px number';
+    }
+  }
+
+  $color-top-left     : color-adjuster($color, light);
+  $color-bottom-right : color-adjuster($color, x-dark);
+  $border-style : outset;
+
+  @if $inverted {
+    $temp : $color-top-left;
+    $color-top-left : $color-bottom-right;
+    $color-bottom-right : $temp;
+    $border-style : inset;
+  }
+
+  $border-stroke: $stroke-width + $unit;
+  $offset-pos: $stroke-width - 1 + $unit;
+  $offset-neg: ($stroke-width * -1) + $unit;
+  $shadow-width: $stroke-width + 1 + $unit;
+
+  @if $has-mobile-effects {
+    border: $border-stroke $border-style color-adjuster($color, light);;
+  }
+  
+  @include mq() {
+    border: none;
+    box-shadow: 
+      $offset-neg $offset-neg $shadow-width 0 $color-bottom-right inset, 
+      $offset-pos $offset-pos $shadow-width 0 $color-top-left inset;
+    border-radius: $offset-pos;
+  }
+} 
+
+/* Creates an inset border on smaller screen and a similar box shadow on larger screens for a recessed panel look
+ * @param $color the base color to adjust the effects to, defaults to $primary-color
+ * @param $stroke-width width of effect in pixels
+ */
+@mixin insetter($color: $color-primary, $stroke-width: 4, $has-mobile-effects: true) {
+  @include outsetter($color, $stroke-width, $has-mobile-effects, true);
+}
+
+/* BEM naming convention mixins */
+/* element level */ 
+@mixin e($element) {
+	&__#{$element} {
+    @content;
+  }
+}
+
+/* modifier level */
+@mixin m($modifier) {
+  &--#{$modifier} {
+    @content;
+  }
+}

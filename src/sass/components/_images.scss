@@ -1,0 +1,9 @@
+.img {
+  &--avatar {
+    border-radius: 50%;
+    height: 2.5em;
+    margin-left: 1em;
+    margin-right: 1em;
+    box-shadow: 0 0 1px 1px color-adjuster($color-primary, x-light);
+  }
+}
