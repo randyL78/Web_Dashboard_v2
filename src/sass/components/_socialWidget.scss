@@ -1,0 +1,53 @@
+.social {
+  $widget-color : darken(color-adjuster($color-primary, xx-light), 4%);
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  @include mq {
+    flex-direction: row;
+  }
+
+  @include e(widget) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 5px;
+    background-color: $widget-color;
+    padding: 1em;
+    flex-basis: 25%;
+    @include outsetter($widget-color, 1, true, true, 8px);
+    @include mq {
+      flex-direction: column;
+
+    }
+    @include mq(large) {
+      flex-direction: row;
+    }
+    @include m(icon) {
+      height: 5em;
+      width: 5em;
+      background-color: color-adjuster($color-primary, dark);
+      padding: 1.25em;
+      border-radius: 50%;
+      @include outsetter(color-adjuster($color-primary, dark), 5, false, true, 50%);
+    }
+
+    @include m(info) {
+      text-align: center;
+
+    }
+ 
+    @include m(text) {
+      font-size: 2.5em;
+      margin: .25em;
+    }
+  }
+}
+
+.icon--social {
+  height: 3em;
+}
+
+.icon--facebook {
+  margin-top: -.3em;
+}
