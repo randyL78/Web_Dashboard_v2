@@ -1,7 +1,7 @@
 .card {
   min-height: 4em;
-  background-color: color-adjuster($color-primary, x-light);
-  @include insetter(color-adjuster($color-primary, x-light), 2 );
+  background-color: color-adjuster($color-primary, xx-light);
+  @include insetter(color-adjuster($color-primary, x-light), 1.5 );
 
   @include m(half) {
     flex-basis: 50%;
@@ -12,5 +12,5 @@
 }
 
 [class^= card] {
-  padding: 0.5em;
+  padding: 0.5em 0;
 }

@@ -49,7 +49,7 @@ export const Visits = () => {
 
 export const Facebook = () => {
   return (
-    <svg height="56.693" width="56.693" className="icon icon--social" >
+    <svg viewBox="10 6 32 45"  className="icon icon--social icon--facebook" >
       <path className="icon__path" d="M40.43 21.739h-7.645v-5.014c0-1.883 1.248-2.322 2.127-2.322h5.395V6.125l-7.43-.029c-8.248 0-10.125 6.174-10.125 10.125v5.518h-4.77v8.53h4.77v24.137h10.033V30.269h6.77l.875-8.53z"/>
     </svg>
   );
@@ -65,7 +65,7 @@ export const Google = () => {
 
 export const Twitter = () => {
   return (
-    <svg viewBox="0 0 32 32" className="icon" >
+    <svg viewBox="0 0 32 32" className="icon icon--social" >
       <path className="icon__path" d="M32 3.1c-1.2.5-2.4.9-3.8 1 1.4-.8 2.4-2.1 2.9-3.6-1.3.8-2.7 1.3-4.2 1.6C25.8.8 24 0 22.2 0c-3.6 0-6.6 2.9-6.6 6.6 0 .5.1 1 .2 1.5-5.5-.3-10.3-2.9-13.6-6.9-.6 1-.9 2.1-.9 3.3 0 2.3 1.2 4.3 2.9 5.5-1.1 0-2.1-.3-3-.8v.1c0 3.2 2.3 5.8 5.3 6.4-.6.1-1.1.2-1.7.2-.4 0-.8 0-1.2-.1.8 2.6 3.3 4.5 6.1 4.6-2.2 1.8-5.1 2.8-8.2 2.8-.5 0-1.1 0-1.6-.1 2.9 1.9 6.4 3 10.1 3 12.1 0 18.7-10 18.7-18.7v-.8c1.3-1 2.4-2.2 3.3-3.5z"/>
     </svg>
   );

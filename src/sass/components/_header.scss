@@ -9,9 +9,14 @@
     @include outsetter;
     @include mq(small) {
       flex-flow: row wrap;
+  
     }
     @include mq {
+      position: fixed;
+      margin-top: -3.6em;
+      width: 100%;
       padding: 0.45em 1.15em;
+      z-index: 100;
     }
     &__headline {
       flex-basis: 100%;

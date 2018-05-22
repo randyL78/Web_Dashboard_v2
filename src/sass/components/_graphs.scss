@@ -1,0 +1,10 @@
+.graph {
+  @include e(container) {
+    position: relative;
+    width: 100%;
+    .card--half & {
+      width: 90%;
+    }
+  }
+}
+

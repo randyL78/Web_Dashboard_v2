@@ -2,9 +2,9 @@
 @import 'theme-colors';
 
 // create basic colors from theme-colors
-$color-primary      : lighten($ship-cove, 8%);
+$color-primary      : lighten($ship-cove, 7%);
 $color-secondary    : $fountain-blue;
-$color-complementary: $pastel-green;
+$color-complementary: $de-york;
 $color-success      : #66eeaa;
 
 // color adjust variables (for use in color functions)

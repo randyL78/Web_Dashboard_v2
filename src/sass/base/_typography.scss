@@ -35,6 +35,11 @@
   }
 }
 
+p {
+  font-family: $font-family--primary;
+  color: color-adjuster($color-secondary, xx-dark);
+}
+
 a {
   text-decoration: none;
 }

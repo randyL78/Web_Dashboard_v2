@@ -19,13 +19,14 @@
   @extend .flex-wrapper ;
   @include mq {
     padding-left: 4em;
+    margin-top: 3.6em;
   }
 }
 
 .tab {
-  background-color: color-adjuster($color-primary, x-light);
+  background-color: color-adjuster($color-primary, xx-light);
   padding: .5em 1em;
-  @include outsetter(color-adjuster($color-primary, x-light), 3, false);
+  @include outsetter(color-adjuster($color-primary, xx-light), 3, false);
   min-width: 150px;
   text-align: center;
   text-transform: capitalize;

@@ -35,7 +35,7 @@
  * @param $color the base color to adjust the effects to, defaults to $primary-color
  * @param $stroke-width width of effect in pixels
  */
-@mixin outsetter($color: $color-primary, $stroke-width: 4, $has-mobile-effects: true, $inverted: false) {
+@mixin outsetter($color: $color-primary, $stroke-width: 4, $has-mobile-effects: true, $inverted: false, $radius: null) {
   $unit : px;
   @if unitless($stroke-width) == false {
     @if unit($stroke-width) == 'px' {
@@ -49,6 +49,8 @@
   $color-bottom-right : color-adjuster($color, x-dark);
   $border-style : outset;
 
+
+
   @if $inverted {
     $temp : $color-top-left;
     $color-top-left : $color-bottom-right;
@@ -61,16 +63,21 @@
   $offset-neg: ($stroke-width * -1) + $unit;
   $shadow-width: $stroke-width + 1 + $unit;
 
+  @if $radius == null {
+    $radius : $offset-pos;
+  }
+
   @if $has-mobile-effects {
     border: $border-stroke $border-style color-adjuster($color, light);;
   }
+
+  border-radius: $radius;
   
   @include mq() {
     border: none;
     box-shadow: 
       $offset-neg $offset-neg $shadow-width 0 $color-bottom-right inset, 
       $offset-pos $offset-pos $shadow-width 0 $color-top-left inset;
-    border-radius: $offset-pos;
   }
 } 
 
@@ -78,8 +85,8 @@
  * @param $color the base color to adjust the effects to, defaults to $primary-color
  * @param $stroke-width width of effect in pixels
  */
-@mixin insetter($color: $color-primary, $stroke-width: 4, $has-mobile-effects: true) {
-  @include outsetter($color, $stroke-width, $has-mobile-effects, true);
+@mixin insetter($color: $color-primary, $stroke-width: 4, $has-mobile-effects: true, $radius : null) {
+  @include outsetter($color, $stroke-width, $has-mobile-effects, true, $radius);
 }
 
 /* BEM naming convention mixins */
